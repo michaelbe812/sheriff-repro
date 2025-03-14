@@ -1,10 +1,12 @@
 import nx from '@nx/eslint-plugin';
 import baseConfig from '../../eslint.config.mjs';
+import sheriff from '@softarc/eslint-plugin-sheriff';
 
 export default [
   ...baseConfig,
   ...nx.configs['flat/angular'],
   ...nx.configs['flat/angular-template'],
+  sheriff.configs.all,
   {
     files: ['**/*.ts'],
     rules: {
